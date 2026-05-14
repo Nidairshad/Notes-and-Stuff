@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+      //Currying is a technique where a function 
+      // does not take all arguments at once — instead, 
+      // it takes them 
+      // one by one (or in small steps) and 
+      // returns a new function each time.  
+
+      //used in
+      //Logging systems
+//Debug tools
+//Notifications
+
+//normal function
+
+function add(a,b,c){
+    return a+b+c;
+}
+console.log(add(2,4,3));
+
+//curried
+
+function curriedadd(a){
+    return function(b){
+        return function(c){
+            return a+ b + c;
+        }
+    };   
+}
+console.log(curriedadd(2)(3)(4));
+
+    </script>
+</body>
+</html>

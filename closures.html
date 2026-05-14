@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //eg of closure
+        //when function remembers variables from its outerscope 
+        //even after that outer function fuinished executing
+       function outer(){
+        let count = 0 ;
+
+        return function inner(){
+            count ++;
+            console.log(count);
+        }
+       }
+       const counter = outer();
+       counter();
+       counter(); 
+
+       //practice qs
+// 1)Create a function bankAccount():
+
+// has private balance = 100
+// return two functions:
+// deposit(amount)
+// getBalance()
+
+// 👉 balance should NOT be accessible directly.
+
+function bankAccount(){
+    let bal = 100;
+
+    function deposit(amount){
+        bal+=amount;
+    }
+    function getBalance(){
+        return bal;
+    }
+    return{
+        deposit,getBalance
+    };
+
+}
+const account = bankAccount();
+account.deposit(50);
+console.log(account.getBalance());//150
+    </script>
+</body>
+</html>

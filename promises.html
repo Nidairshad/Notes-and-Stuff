@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>hello </h1>
+    <div>
+    <pre><code>console.log('HEY THERE')</code></pre>
+    </div>
+    <script>
+        /*
+        synchronous task ; do the task right away
+        asynchronous task = takes time await and promises that it ll do the task */
+        let a = 10;
+        let b = 20;
+
+        let result = a + b;
+
+        async function getData(){
+            let resultFromServer = await fetch(
+                "https://jsonplaceholder.typicode.com/posts"
+            );
+            console.log(await resultFromServer.json);
+        }
+
+        getData();
+        console.log(result);
+    </script>
+</body>
+</html>
